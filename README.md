@@ -9,7 +9,7 @@ Truncates long names to 21 chars so they can be embossed on a card
 
 ## How to use
 ```javascript
-const trunc = require("../index.js");
+const trunc = require("./name-truncator/index.js");
 let truncated = trunc(
           pre, //Dr
           firstName, //Muhammad
