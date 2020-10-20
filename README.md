@@ -8,8 +8,8 @@ Truncates long names to 21 chars so they can be embossed on a card
 |  John             | Alex              | Doe                         | John Alex Doe
 |  Edgar            |                   | Poe                         | Edgar Poe
 |  Jugemu           | Paipopaipo        | Paipo-no-shuringan          | J Paipo-no-shuringan
-|  Maria            | Paipopaipo        | Luna-Guzman Alfrido-Trevino | Maria Luna Alfrido
-|  Valentina        | Mikhailovna	| Osipenkovskaya-Zadunayskaya | V M Osipenkovskaya
+|  Maria            |                   | Luna-Guzman Alfrido-Trevino | Maria Luna Alfrido
+|  Valentina        | Mikhailovna	      | Osipenkovskaya-Zadunayskaya | V M Osipenkovskaya
 
 
 ## How to use
