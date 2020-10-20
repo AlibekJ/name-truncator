@@ -78,58 +78,65 @@ let replaceAccentedCharacters = (function () {
 })();
 
 
+let doRemoveExtraSpaces = function (given = "") {
+  return given.replaceAll("  ", " ").replaceAll("  ", " ").replaceAll("  ", " ").trim();
+}
+
 const doTruncate = function (pre = "", firstName = "", middleName = "", lastName = "", post = "") {
 
   firstName = replaceAccentedCharacters(firstName).toUpperCase();
   middleName = replaceAccentedCharacters(middleName).toUpperCase();
   lastName = replaceAccentedCharacters(lastName).toUpperCase();
 
- 
+
   let resp;
-  resp = (firstName + " " + (middleName ? middleName + " " : "") + lastName).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces(pre + " " + firstName + " " + (middleName ? middleName + " " : "") + lastName + " " + post)
+  if (resp.length <= 21) return resp;
 
-  resp = (firstName + " " + (middleName ? middleName[0] + " " : "") + lastName).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName + " " : "") + lastName)
+  if (resp.length <= 21) return resp;
 
+  resp = doRemoveExtraSpaces(pre + " " + firstName + " " + (middleName ? middleName[0] + " " : "") + lastName + " " + post)
+  if (resp.length <= 21) return resp;
 
-  resp = (firstName.split(" ")[0] + " " + (middleName ? middleName[0] + " " : "") + lastName).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName[0] + " " : "") + lastName);
+  if (resp.length <= 21) return resp;
 
+  resp = doRemoveExtraSpaces(firstName.split(" ")[0] + " " + (middleName ? middleName[0] + " " : "") + lastName);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName[0] || "") + " " + (middleName ? middleName[0] + " " : "") + lastName).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + (middleName ? middleName[0] + " " : "") + lastName);
+  if (resp.length <= 21) return resp;
 
+  resp = doRemoveExtraSpaces((firstName || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0].split("-")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0].split("-")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + lastName);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName[0] || "") + " " + lastName).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + lastName.split(" ")[0].split("-")[0]).substr(0, 21);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName[0] || "") + " " + lastName.split(" ")[0].split("-")[0]).substr(0, 21).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName.split(" ")[0] || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName[0] || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + lastName.split(" ")[0]);
+  if (resp.length <= 21) return resp;
 
-  resp = ((firstName[0] || "") + " " + lastName.split(" ")[0]).trim();
-  if (resp.length <= 21) return resp.trim();
-
-  resp = ((firstName[0] || "") + " " + lastName.split(" ")[0].split("-")[0]).substr(0, 21).trim();
-  return resp.trim();
+  resp = doRemoveExtraSpaces((firstName[0] || "") + " " + lastName.split(" ")[0].split("-")[0]).substr(0, 21);
+  return resp;
 };
 
 
