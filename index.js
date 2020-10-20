@@ -79,7 +79,7 @@ let replaceAccentedCharacters = (function () {
 
 
 let doRemoveExtraSpaces = function (given = "") {
-  return given.replaceAll("  ", " ").replaceAll("  ", " ").replaceAll("  ", " ").trim();
+  return (given + "").replaceAll("  ", " ").replaceAll("  ", " ").replaceAll("  ", " ").trim();
 }
 
 const doTruncate = function (pre = "", firstName = "", middleName = "", lastName = "", post = "") {
@@ -93,13 +93,25 @@ const doTruncate = function (pre = "", firstName = "", middleName = "", lastName
   resp = doRemoveExtraSpaces(pre + " " + firstName + " " + (middleName ? middleName + " " : "") + lastName + " " + post)
   if (resp.length <= 21) return resp;
 
+  resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName + " " : "") + lastName + " " + post)
+  if (resp.length <= 21) return resp;
+
   resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName + " " : "") + lastName)
   if (resp.length <= 21) return resp;
 
   resp = doRemoveExtraSpaces(pre + " " + firstName + " " + (middleName ? middleName[0] + " " : "") + lastName + " " + post)
   if (resp.length <= 21) return resp;
 
+  resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName[0] + " " : "") + lastName + " " + post)
+  if (resp.length <= 21) return resp;
+
   resp = doRemoveExtraSpaces(firstName + " " + (middleName ? middleName[0] + " " : "") + lastName);
+  if (resp.length <= 21) return resp;
+
+  resp = doRemoveExtraSpaces(pre + " " + firstName.split(" ")[0] + " " + (middleName ? middleName[0] + " " : "") + lastName + " " + post);
+  if (resp.length <= 21) return resp;
+
+  resp = doRemoveExtraSpaces(firstName.split(" ")[0] + " " + (middleName ? middleName[0] + " " : "") + lastName + " " + post);
   if (resp.length <= 21) return resp;
 
   resp = doRemoveExtraSpaces(firstName.split(" ")[0] + " " + (middleName ? middleName[0] + " " : "") + lastName);
