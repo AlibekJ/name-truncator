@@ -1,0 +1,11 @@
+{
+  "name": "name-truncator",
+  "version": "0.0.1",
+  "description": "Takes first, middle and last name, produces a 21-char string to be embossed on a card",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./test/test.js"
+  },
+  "author": "Alibek",
+  "license": "ISC"
+}

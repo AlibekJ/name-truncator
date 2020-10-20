@@ -1,0 +1,30 @@
+pre,firstName,middleName,lastName,post,result
+,John,Alex,Doe,,John Alex Doe
+,Edgar,,Poe,,Edgar Poe
+,Alex,,U,,Alex U
+,O,,U,,O U
+,Mohammad,Mustafa,El Baradei,,Mohammad M El Baradei
+,Wassim,,El-Dandachli,,Wassim El-Dandachli
+,Mohammad,Rashid,Al Mactoum,,Mohammad R Al Mactoum
+,Tanirbergen,Tobaniazovich,Berdongarov,,T T Berdongarov
+,Federico,,Garcia Lorca,,Federico Garcia Lorca
+,Maria Elena,,Benavides-Guzman Alfrido-Trevino,,Maria Benavides
+,Maria,,Luna-Guzman Alfrido-Trevino,,Maria Luna Alfrido
+,Guillermo ,,del Toro Gomez,,Guillermo del Toro
+,Luis Maria Eduardo,,Garcia Fernandez Luna Galvan,,Luis Garcia Luna
+,Po Mun Ho Pau,,Lo Lo Min Dau ,,P M H Pau Lo Lo M D
+,Wolfe­schlegel­stein­hausen­berger­dorff,,Ottovordemgentschenfelde,,W Ottovordemgentsche
+,Alexandra-Anasstasia,,Kosmodemyanskaya,,A-A Kosmodemyanskaya
+,Alexandra-Anasstasia,Anatolyevna,Krug,,A A Krug
+,Ludmila,Prokofievna,Sobol,,Ludmila P Sobol
+,Valentina,Mikhailovna,Osipenkovskaya-Zadunayskaya,,V M Osipenkovskaya
+,Selim,,Abdulkhelilseidrahmanov,,S Abdulkhelilseidrah
+,Mary,Paʻahana,Kanakaʻole,,Mary P Kanakaole
+Dr,Jugemu,Paipopaipo,Paipo-no-shuringan,,J Paipo-no-shuringan
+,Ostap,Ibragimovich,Berta-Maria Bender Bey,,Ostap Berta-Maria B
+,Iskander,K,Junisbayev,,Iskander K Junisbayev
+,Aspandiyar,,Maramultuk,,Aspandiyar Maramultuk
+,Elvis,,,,Elvis
+Dr,Youn,Soo,Kim,,Dr Youn Soo Kim
+,William,Henry,Gates ,III,William H Gates III
+Dr,William,F,Burr,II,Dr William F Burr II
