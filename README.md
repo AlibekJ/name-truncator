@@ -24,3 +24,6 @@ let truncated = trunc(
         );
 console.log(truncated); //Muhammad M El Baradei
 ```
+
+
+2024
